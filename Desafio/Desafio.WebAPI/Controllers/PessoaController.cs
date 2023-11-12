@@ -14,8 +14,7 @@ namespace Desafio.WebAPI.Controllers
         {
             _pessoaServices = pessoaServices;
         }
-
-        // GET api/todos
+        
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Pessoa>>> GetAll()
         {
