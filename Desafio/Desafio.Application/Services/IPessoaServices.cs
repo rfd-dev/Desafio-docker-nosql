@@ -1,6 +1,6 @@
-﻿using Desafio.Business.DomainModels;
+﻿using Desafio.Domain.DomainModels;
 
-namespace Desafio.Business.Services
+namespace Desafio.Application.Services
 {
     public interface IPessoaServices
     {

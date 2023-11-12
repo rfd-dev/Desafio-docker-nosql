@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace Desafio.Business.DomainModels
+namespace Desafio.Domain.DomainModels
 {
     public class Pessoa
     {

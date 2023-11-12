@@ -20,7 +20,7 @@ services:
         depends_on:
           - mongo
     apicadastro-server:
-        build: \Desafio.API
+        build: \Desafio
         restart: always
         ports:
             - 5322:80

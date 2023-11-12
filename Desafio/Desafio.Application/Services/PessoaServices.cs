@@ -1,7 +1,7 @@
-﻿using Desafio.Business.DomainModels;
-using Desafio.Business.Interfaces;
+﻿using Desafio.Application.Repositories;
+using Desafio.Domain.DomainModels;
 
-namespace Desafio.Business.Services
+namespace Desafio.Application.Services
 {
     public class PessoaServices : IPessoaServices
     {

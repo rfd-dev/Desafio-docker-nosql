@@ -1,6 +1,5 @@
 ﻿using Desafio.Application.Context;
-using Desafio.Business.DomainModels;
-using Desafio.Business.Interfaces;
+using Desafio.Domain.DomainModels;
 using MongoDB.Bson;
 using MongoDB.Driver;
 

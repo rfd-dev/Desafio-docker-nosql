@@ -1,4 +1,4 @@
-using Desafio.API.Configuration;
+using Desafio.WebAPI.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 

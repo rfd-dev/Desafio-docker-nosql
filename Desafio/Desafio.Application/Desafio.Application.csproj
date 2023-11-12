@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Library</OutputType>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -12,8 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Desafio.Business\Desafio.Business.csproj" />
-    <ProjectReference Include="..\Desafio.Commons\Desafio.Commons.csproj" />
+    <ProjectReference Include="..\Desafio.Domain\Desafio.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,5 @@
-﻿using Desafio.Business.DomainModels;
-using Desafio.Commons.Options;
+﻿using Desafio.Commons.Options;
+using Desafio.Domain.DomainModels;
 using MongoDB.Driver;
 
 namespace Desafio.Application.Context

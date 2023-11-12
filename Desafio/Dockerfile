@@ -7,16 +7,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["Desafio.API.csproj", "."]
-RUN dotnet restore "./Desafio.API.csproj"
+COPY ["Desafio.WebAPI/Desafio.WebAPI.csproj", "."]
+RUN dotnet restore "./Desafio.WebAPI.csproj"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "Desafio.API.csproj" -c Release -o /app/build
+RUN dotnet build "Desafio.WebAPI/Desafio.WebAPI.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Desafio.API.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "Desafio.WebAPI/Desafio.WebAPI.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Desafio.API.dll"]
+ENTRYPOINT ["dotnet", "Desafio.WebAPI.dll"]

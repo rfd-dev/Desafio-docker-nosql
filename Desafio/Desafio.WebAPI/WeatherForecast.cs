@@ -1,4 +1,4 @@
-namespace Desafio.API
+namespace Desafio.WebAPI
 {
     public class WeatherForecast
     {

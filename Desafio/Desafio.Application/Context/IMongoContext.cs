@@ -1,4 +1,4 @@
-﻿using Desafio.Business.DomainModels;
+﻿using Desafio.Domain.DomainModels;
 using MongoDB.Driver;
 
 namespace Desafio.Application.Context

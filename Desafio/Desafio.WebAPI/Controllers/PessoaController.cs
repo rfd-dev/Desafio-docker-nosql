@@ -1,8 +1,8 @@
-﻿using Desafio.Business.DomainModels;
-using Desafio.Business.Services;
+﻿using Desafio.Application.Services;
+using Desafio.Domain.DomainModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Desafio.API.Controllers
+namespace Desafio.WebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]

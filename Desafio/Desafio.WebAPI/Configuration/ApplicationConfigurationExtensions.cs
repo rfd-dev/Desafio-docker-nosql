@@ -1,10 +1,9 @@
 ﻿using Desafio.Application.Context;
 using Desafio.Application.Repositories;
-using Desafio.Business.Interfaces;
-using Desafio.Business.Services;
+using Desafio.Application.Services;
 using Desafio.Commons.Options;
 
-namespace Desafio.API.Configuration
+namespace Desafio.WebAPI.Configuration
 {
     public static class ApplicationConfigurationExtensions
     {
