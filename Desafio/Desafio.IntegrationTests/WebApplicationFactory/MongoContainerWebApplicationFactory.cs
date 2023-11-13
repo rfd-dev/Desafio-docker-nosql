@@ -1,5 +1,6 @@
 ﻿using Desafio.Application.Context;
 using Desafio.Commons.Options;
+using Desafio.WebAPI.Configuration;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,8 +30,11 @@ namespace Desafio.IntegrationTests.WebApplicationFactory
                 {
                     services.Remove(dbContextDescriptor);
                 }
-                
-                services.AddSingleton<IMongoDbContext>(new MongoDbContext(_mongoDbContainer.GetConnectionString(), "DesafioDB"));
+
+                var mongoDbContext = new MongoDbContext(_mongoDbContainer.GetConnectionString(), "DesafioDB");
+                services.AddSingleton<IMongoDbContext>(mongoDbContext);
+
+                DbSeedingUtilities.SeedDbForTests(mongoDbContext);
             });
 
             builder.UseEnvironment("Development");
