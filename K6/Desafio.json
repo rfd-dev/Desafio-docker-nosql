@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "8141f85e-6523-4e41-ba6f-26e9f7a87fab",
+		"name": "Desafio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12089245"
+	},
+	"item": [
+		{
+			"name": "Get All Pessoas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api}}/Pessoa",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"Pessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Pessoa",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Nome\": \"Rafael\",\r\n    \"CPF\": \"103\",\r\n    \"Email\": \"email@email.com\",\r\n    \"DataNascimento\": \"1991-02-02\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api}}/Pessoa",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"Pessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Pessoa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api}}/Pessoa/2",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"Pessoa",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
