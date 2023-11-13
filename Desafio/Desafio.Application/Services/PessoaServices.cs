@@ -1,5 +1,6 @@
 ﻿using Desafio.Application.Repositories;
 using Desafio.Domain.DomainModels;
+using Desafio.Domain.ViewModels;
 
 namespace Desafio.Application.Services
 {
@@ -12,21 +13,24 @@ namespace Desafio.Application.Services
             _pessoaRepository = pessoaRepository;
         }
 
-        public async Task<IEnumerable<Pessoa>> GetAll()
+        public async Task<IEnumerable<PessoaViewModel>> GetAll()
         {
-            return await _pessoaRepository.GetAll();
+            var pessoas = await _pessoaRepository
+                .GetAll();
+            return pessoas.Select(p => new PessoaViewModel(p));
         }
 
-        public async Task<Pessoa> Get(long id)
+        public async Task<PessoaViewModel> Get(long id)
         {
-            return await _pessoaRepository.Get(id);
+            var pessoa = await _pessoaRepository.Get(id);
+            return new PessoaViewModel(pessoa);
         }
 
-        public async Task<Pessoa> Create(Pessoa pessoa)
+        public async Task<PessoaViewModel> Create(Pessoa pessoa)
         {
             await _pessoaRepository.Create(pessoa);
 
-            return pessoa;
+            return new PessoaViewModel(pessoa);
         }
     }
 }

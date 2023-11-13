@@ -1,11 +1,12 @@
 ﻿using Desafio.Domain.DomainModels;
+using Desafio.Domain.ViewModels;
 
 namespace Desafio.Application.Services
 {
     public interface IPessoaServices
     {
-        Task<Pessoa> Create(Pessoa pessoa);
-        Task<Pessoa> Get(long id);
-        Task<IEnumerable<Pessoa>> GetAll();
+        Task<PessoaViewModel> Create(Pessoa pessoa);
+        Task<PessoaViewModel> Get(long id);
+        Task<IEnumerable<PessoaViewModel>> GetAll();
     }
 }
