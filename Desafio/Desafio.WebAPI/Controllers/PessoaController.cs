@@ -31,7 +31,7 @@ namespace Desafio.WebAPI.Controllers
                 return NotFound();
         }
 
-        [HttpGet("count")]
+        [HttpGet("Count")]
         public async Task<ActionResult<long>> Count()
         {
             return new ObjectResult(await _pessoaServices.Count());
