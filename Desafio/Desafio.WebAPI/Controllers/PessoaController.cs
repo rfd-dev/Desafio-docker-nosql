@@ -28,7 +28,7 @@ namespace Desafio.WebAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Pessoa>> Post([FromBody] Pessoa pessoa)
+        public async Task<ActionResult<Pessoa>> Create([FromBody] Pessoa pessoa)
         {
             return new ObjectResult(await _pessoaServices.Create(pessoa));
         }

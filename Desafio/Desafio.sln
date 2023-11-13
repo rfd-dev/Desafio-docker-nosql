@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.Commons", "Desafio.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.IntegrationTests", "Desafio.IntegrationTests\Desafio.IntegrationTests.csproj", "{23F33D16-A8A3-4CA3-B935-EE96F3B4A92D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.UnitTests", "Desafio.UnitTests\Desafio.UnitTests.csproj", "{78F132D3-2782-4D78-864C-21A17ADE65A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{23F33D16-A8A3-4CA3-B935-EE96F3B4A92D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23F33D16-A8A3-4CA3-B935-EE96F3B4A92D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23F33D16-A8A3-4CA3-B935-EE96F3B4A92D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78F132D3-2782-4D78-864C-21A17ADE65A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78F132D3-2782-4D78-864C-21A17ADE65A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78F132D3-2782-4D78-864C-21A17ADE65A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78F132D3-2782-4D78-864C-21A17ADE65A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
