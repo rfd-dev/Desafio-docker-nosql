@@ -19,9 +19,9 @@ namespace Desafio.Application.Repositories
                         .Find(_ => true)
                         .ToListAsync();
         }
-        public Task<Pessoa> Get(long id)
+        public Task<Pessoa> Get(string cpf)
         {
-            FilterDefinition<Pessoa> filter = Builders<Pessoa>.Filter.Eq(m => m.Id, id);
+            FilterDefinition<Pessoa> filter = Builders<Pessoa>.Filter.Eq(m => m.CPF, cpf);
             return _context
                     .Pessoas
                     .Find(filter)
@@ -29,12 +29,11 @@ namespace Desafio.Application.Repositories
         }
         public async Task Create(Pessoa pessoa)
         {
-            pessoa.Id = await this.GetNextId();
             await _context.Pessoas.InsertOneAsync(pessoa);
         }
-        public async Task<long> GetNextId()
+        public async Task<long> Count()
         {
-            return await _context.Pessoas.CountDocumentsAsync(new BsonDocument()) + 1;
+            return await _context.Pessoas.CountDocumentsAsync(new BsonDocument());
         }
     }
 }

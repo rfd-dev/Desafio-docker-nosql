@@ -6,8 +6,8 @@ namespace Desafio.Domain.DomainModels
     public class Pessoa
     {
         [BsonId]
-        public ObjectId InternalId { get; set; }
-        public long Id { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string? Id { get; set; }
         public string Nome { get; set; } = string.Empty;
         public string CPF { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;

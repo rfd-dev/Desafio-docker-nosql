@@ -5,8 +5,9 @@ namespace Desafio.Application.Services
 {
     public interface IPessoaServices
     {
+        Task<long> Count();
         Task<PessoaViewModel> Create(Pessoa pessoa);
-        Task<PessoaViewModel> Get(long id);
+        Task<PessoaViewModel?> Get(string cpf);
         Task<IEnumerable<PessoaViewModel>> GetAll();
     }
 }

@@ -21,10 +21,20 @@ namespace Desafio.WebAPI.Controllers
             return new ObjectResult(await _pessoaServices.GetAll());
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Pessoa>> Get(long id)
+        [HttpGet("{cpf}")]
+        public async Task<ActionResult<Pessoa>> Get(string cpf)
         {
-            return new ObjectResult(await _pessoaServices.Get(id));
+            var pessoa = await _pessoaServices.Get(cpf);
+            if (pessoa is not null)
+                return new ObjectResult(pessoa);
+            else
+                return NotFound();
+        }
+
+        [HttpGet("count")]
+        public async Task<ActionResult<long>> Count()
+        {
+            return new ObjectResult(await _pessoaServices.Count());
         }
 
         [HttpPost]

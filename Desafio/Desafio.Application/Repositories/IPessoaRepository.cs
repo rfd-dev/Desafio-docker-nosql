@@ -5,8 +5,8 @@ namespace Desafio.Application.Repositories
     public interface IPessoaRepository
     {
         Task Create(Pessoa pessoa);
-        Task<Pessoa> Get(long id);
+        Task<Pessoa> Get(string id);
         Task<IEnumerable<Pessoa>> GetAll();
-        Task<long> GetNextId();
+        Task<long> Count();
     }
 }

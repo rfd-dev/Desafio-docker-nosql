@@ -30,8 +30,8 @@ namespace Desafio.IntegrationTests.Controllers.PessoaController
             response.EnsureSuccessStatusCode();
             var responseContent = await response.Content.ReadAsAsync<IEnumerable<PessoaViewModel>>();
             Assert.Equal(2, responseContent.Count());
-            Assert.Contains(responseContent, p => p.Email == "teste@teste.com" && p.Id == 1 && p.CPF == "123");
-            Assert.Contains(responseContent, p => p.Email == "irma@teste.com" && p.Id == 2 && p.CPF == "456");
+            Assert.Contains(responseContent, p => p.Email == "teste@teste.com" && p.Id == "6551b3cf997751d03efc68cd" && p.CPF == "123");
+            Assert.Contains(responseContent, p => p.Email == "irma@teste.com" && p.Id == "6551b3cf997751d03efc68cc" && p.CPF == "456");
         }
     }
 }

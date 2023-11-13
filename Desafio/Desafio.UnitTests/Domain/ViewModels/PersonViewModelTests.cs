@@ -20,7 +20,7 @@ namespace Desafio.UnitTests.Domain.ViewModels
                 DataNascimento = new DateOnly(1991, 2, 2),
                 Email = "teste@teste.com",
                 Nome = "Teste Pessoa",
-                Id = 1
+                Id = "1"
             };
 
             // Act
@@ -44,7 +44,7 @@ namespace Desafio.UnitTests.Domain.ViewModels
                 DataNascimento = new DateOnly(1991, 2, 2),
                 Email = "teste@teste.com",
                 Nome = "Teste Pessoa",
-                Id = 1
+                Id = "1"
             };
 
 

@@ -20,10 +20,13 @@ namespace Desafio.Application.Services
             return pessoas.Select(p => new PessoaViewModel(p));
         }
 
-        public async Task<PessoaViewModel> Get(long id)
+        public async Task<PessoaViewModel?> Get(string cpf)
         {
-            var pessoa = await _pessoaRepository.Get(id);
-            return new PessoaViewModel(pessoa);
+            var pessoa = await _pessoaRepository.Get(cpf);
+            if (pessoa is not null)
+                return new PessoaViewModel(pessoa);
+            else
+                return null;
         }
 
         public async Task<PessoaViewModel> Create(Pessoa pessoa)
@@ -31,6 +34,11 @@ namespace Desafio.Application.Services
             await _pessoaRepository.Create(pessoa);
 
             return new PessoaViewModel(pessoa);
+        }
+
+        public async Task<long> Count()
+        {
+            return await _pessoaRepository.Count();
         }
     }
 }

@@ -18,20 +18,33 @@ namespace Desafio.IntegrationTests.Controllers.PessoaController
         }
 
         [Fact]
-        public async Task Get_WhenIdReceived_ReturnPessoa()
+        public async Task Get_WhenCpfFound_ReturnPessoa()
         {
             // Arrange            
             var client = _factory.CreateClient();
 
             // Act
-            var response = await client.GetAsync("/Pessoa/2");
+            var response = await client.GetAsync("/Pessoa/456");
 
             // Assert
             response.EnsureSuccessStatusCode();
             var responseContent = await response.Content.ReadAsAsync<PessoaViewModel>();
             Assert.Equal("irma@teste.com", responseContent.Email);
-            Assert.Equal(2, responseContent.Id);
+            Assert.Equal("6551b3cf997751d03efc68cc", responseContent.Id);
             Assert.Equal("456", responseContent.CPF);
+        }
+
+        [Fact]
+        public async Task Get_WhenCpfNotFound_Return404()
+        {
+            // Arrange            
+            var client = _factory.CreateClient();
+
+            // Act
+            var response = await client.GetAsync("/Pessoa/00000");
+
+            // Assert
+            Assert.Equal(System.Net.HttpStatusCode.NotFound, response.StatusCode);
         }
     }
 }
