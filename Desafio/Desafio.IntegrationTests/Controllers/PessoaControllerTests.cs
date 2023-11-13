@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Testing;
+﻿using Desafio.IntegrationTests.WebApplicationFactory;
+using Microsoft.AspNetCore.Mvc.Testing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,19 +8,19 @@ using System.Threading.Tasks;
 
 namespace Desafio.IntegrationTests.Controllers
 {
-    public class PessoaControllerTests : IClassFixture<WebApplicationFactory<Program>>
+    public class PessoaControllerTests : IClassFixture<MongoContainerWebApplicationFactory<Program>>
     {
-        private readonly WebApplicationFactory<Program> _factory;
+        private readonly MongoContainerWebApplicationFactory<Program> _factory;
 
-        public PessoaControllerTests(WebApplicationFactory<Program> factory)
+        public PessoaControllerTests(MongoContainerWebApplicationFactory<Program> mongoContainerWebApplicationFactory)
         {
-            _factory = factory;
+            _factory = mongoContainerWebApplicationFactory;
         }
 
         [Fact]
         public async Task GetAll_ReturnsOnlySeededData()
         {
-            // Arrange
+            // Arrange            
             var client = _factory.CreateClient();
 
             // Act

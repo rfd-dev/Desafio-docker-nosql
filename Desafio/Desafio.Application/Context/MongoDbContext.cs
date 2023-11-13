@@ -4,14 +4,14 @@ using MongoDB.Driver;
 
 namespace Desafio.Application.Context
 {
-    public class MongoContext : IMongoContext
+    public class MongoDbContext : IMongoDbContext
     {
         private readonly IMongoDatabase _db;
 
-        public MongoContext(MongoDbOptions options)
+        public MongoDbContext(string connectionString, string database)
         {
-            var client = new MongoClient(options.ConnectionString);
-            _db = client.GetDatabase(options.Database);
+            var client = new MongoClient(connectionString);
+            _db = client.GetDatabase(database);
         }
 
         public IMongoCollection<Pessoa> Pessoas => _db.GetCollection<Pessoa>("Pessoas");

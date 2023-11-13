@@ -21,7 +21,7 @@ namespace Desafio.WebAPI.Configuration
             var mongoDbOptions = config
                 .GetSection(MongoDbOptions.MongoDb)
                 .Get<MongoDbOptions>() ?? throw new NullReferenceException("Configuração do Database não inicializada");
-            services.AddSingleton<IMongoContext>(new MongoContext(mongoDbOptions));
+            services.AddSingleton<IMongoDbContext>(new MongoDbContext(mongoDbOptions.ConnectionString, mongoDbOptions.Database));
             services.AddScoped<IPessoaRepository, PessoaRepository>();
             services.AddScoped<IPessoaServices, PessoaServices>();
 

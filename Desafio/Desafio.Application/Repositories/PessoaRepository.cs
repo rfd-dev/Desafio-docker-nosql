@@ -7,8 +7,8 @@ namespace Desafio.Application.Repositories
 {
     public class PessoaRepository : IPessoaRepository
     {
-        private readonly IMongoContext _context;
-        public PessoaRepository(IMongoContext context)
+        private readonly IMongoDbContext _context;
+        public PessoaRepository(IMongoDbContext context)
         {
             _context = context;
         }
